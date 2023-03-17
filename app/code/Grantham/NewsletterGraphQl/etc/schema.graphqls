@@ -1,0 +1,14 @@
+type Mutation {
+    unSubscribeEmailToNewsletter(email: String!): UnSubscribeEmailToNewsletterOutput @doc(description:"UnSubscribes the specified email to a newsletter") @resolver(class: "Grantham\\NewsletterGraphQl\\Model\\Resolver\\UnSubscribeEmailToNewsletter")
+}
+
+type UnSubscribeEmailToNewsletterOutput {
+    status: SubscriptionStatusesEnum @doc(description: "Returns the status of the unsubscription request")
+}
+
+enum SubscriptionStatusesEnum {
+    NOT_ACTIVE
+    SUBSCRIBED
+    UNSUBSCRIBED
+    UNCONFIRMED
+}
